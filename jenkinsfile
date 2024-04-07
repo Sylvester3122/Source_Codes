@@ -11,7 +11,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build('sylvester2210/Calculator')
+                    docker.build('sylvester2210/calculator')
                 }
             }
         }
@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials_id') {
-                        docker.image('sylvester2210/Calculator').push('latest')
+                        docker.image('sylvester2210/calculator').push('latest')
                     }
                 }
             }

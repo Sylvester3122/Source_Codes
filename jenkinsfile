@@ -19,7 +19,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub_credentials_id') {
+                    docker.withRegistry('https://registry.hub.docker.com', 'sylvester2210') {
                         docker.image('sylvester2210/calculator').push('latest')
                     }
                 }
